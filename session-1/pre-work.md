@@ -21,7 +21,7 @@ Secondary storage holds permanent or semi-permanent data.
 
 #### Control Unit
 
-The Control Unit of the CPU uses electrical signals to direct the entire computer system to carry out, or execute, stored program instructions. The control unit does not execute program instructions; rather, it directs other parts of the system to do so. The control unit must communicate with both the arithmetic/logic unit and memory.
+The Control Unit of the CPU uses electrical signals to direct the entire computer system to execute stored program instructions. The control unit does not execute program instructions; rather, it directs other parts of the system to do so. The control unit must communicate with both the arithmetic/logic unit and memory.
 
 #### The Arithmetic/Logic Unit (ALU)
 
@@ -71,9 +71,9 @@ In reality, RAM doesn't usually operate at optimum speed. **Latency** changes th
 
 The **rated burst mode** of memory is normally expressed as four numbers separated by dashes. The first number tells you the number of clock cycles needed to begin a read operation; the second, third and fourth numbers tell you how many cycles are needed to read each consecutive bit in the row, also known as the **wordline**. For example: 5-1-1-1 tells you that it takes five cycles to read the first bit and one cycle for each bit after that. Lower = better performance.
 
-**Pipelining** also minimizes the effect of latency by simultaneously reading one or more words from memory, sending the current word or words to the CPU and writing one or more words to memory cells.T
+**Pipelining** also minimizes the effect of latency by simultaneously reading one or more words from memory, sending the current word or words to the CPU and writing one or more words to memory cells.
 
-he speed and width of the memory's bus should match the system's bus. Even with a wide and fast bus, it still takes longer for data to *get* from the memory card to the CPU than it takes for the CPU to actually *process* the data.
+The speed and width of the memory's bus should match the system's bus. Even with a wide and fast bus, it still takes longer for data to *get* from the memory card to the CPU than it takes for the CPU to actually *process* the data.
 
 #### Caches
 
@@ -117,7 +117,7 @@ The location in memory for each instruction and each piece of data is identified
 #### Components
 
 * **Program Counter (PC)**: stores the memory address of the *next* instruction.
-* **Memory Address Register (MAR)**: stores the address of the memory to-be-loaded.
+* **Memory Address Register (MAR)**: stores the address of the memory to-be-loaded/stored.
 * **Memory Data Register (MDR)**: the contents pointed at by the MAR are loaded here.
     * It is a two-way register that stores data being *loaded from* or *stored into* memory.
 * **Current Instruction Register (CIR)**: if an instruction is loaded into the MDR, it is copied here.
@@ -129,15 +129,44 @@ Fetch:
 1. The PC points to the address of the next instruction to execute.
 1. The address stored in the PC is copied into the MAR.
 1. The CPU takes the instruction stored at the address in the MAR and copies it into the MDR.
+    * A signal is sent through the **address bus** to the RAM.
+    * The CU sends a memory read signal and the contents of the address are copied through the **data bus** to the MDR.
 1. The instruction in the MDR is copied into the CIR.
 1. The PC increments to point to the next instruction to be executed.
 
 Decode:
 
-1. The Control Unit (CU) decodes the instruction in the CIR.
+The Control Unit (CU) decodes the instruction in the CIR:
+
+1. The instruction is sent via the data bus to the CU where it is split into two parts.
+    * The first part is the **opcode**, the command.
+    * The second part is the **operand**, the address in RAM where data will be read/written.
+1. The CU can translate opcodes into instructions.
 
 Execute:
 
 1. The CU oversees this process.
 1. If the instruction is a load/store, the MAR and MDR are used as temporary storage between the CPU and memory.
 1. If the instruction is requires the ALU (or floating point unit, FPU), they do the required work by instruction from the CU via the control bus.
+1. Most instructions write the result of some computation into a register (except store/branch/jump).
+
+## Feynman Computer Heuristics Lecture
+
+[Video](https://www.youtube.com/watch?v=EKWGGDXe5MA)
+
+Which actual physical components correspond to each of Feynman’s metaphors. For instance, what are the physical equivalents of the "cards" that Feynman describes, and what hardware is used to "file" as opposed to "process" these cards?
+
+Cards = instructions & data in memory.
+"File" = CPU loading/storing data from memory.
+"Process" = CPU, CU, ALU.
+Basement = secondary storage.
+
+## Two's Complement
+
+How to get from a positive representation to a negative representation? E.g. 3 to -3?
+
+Invert all bits (bitwise complement) and add 1.
+
+3 = `0011`
+
+-3 = `1101`
