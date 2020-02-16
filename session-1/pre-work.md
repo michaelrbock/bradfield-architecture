@@ -145,7 +145,8 @@ The Control Unit (CU) decodes the instruction in the CIR:
 
 Execute:
 
-1. The CU oversees this process.
+The CU oversees this process.
+
 1. If the instruction is a load/store, the MAR and MDR are used as temporary storage between the CPU and memory.
 1. If the instruction is requires the ALU (or floating point unit, FPU), they do the required work by instruction from the CU via the control bus.
 1. Most instructions write the result of some computation into a register (except store/branch/jump).
@@ -156,10 +157,10 @@ Execute:
 
 Which actual physical components correspond to each of Feynman’s metaphors. For instance, what are the physical equivalents of the "cards" that Feynman describes, and what hardware is used to "file" as opposed to "process" these cards?
 
-Cards = instructions & data in memory.
-"File" = CPU loading/storing data from memory.
-"Process" = CPU, CU, ALU.
-Basement = secondary storage.
+* Cards = instructions & data in memory.
+* "File" = CPU loading/storing data from memory.
+* "Process" = CPU, CU, ALU.
+* Basement = secondary storage.
 
 ## Two's Complement
 
