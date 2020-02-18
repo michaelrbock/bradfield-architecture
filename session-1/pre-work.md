@@ -79,9 +79,9 @@ The speed and width of the memory's bus should match the system's bus. Even with
 
 **Caches** allieviate the bottleneck of sending data between the CPU and RAM.
 
-The **primary/level 1 (L1)** cache is small and built into the CPU. They are usually split into L1d (for data) and L1i (for instructions).
+The **primary/level 1 (L1)** cache is small and built into the CPU. They are usually split into L1d (for data) and L1i (for instructions). There are also L2-L4 caches.
 
-The **secondary/level 2 (L2)** cache resides on memory close to the CPU and has a direct connection to the CPU. A dedicated circuit called the **L2 controller** regulates the use of the L2 cache by the CPU. The L2 cache can also be built into the CPU itself.
+These days the L2 is basically always integrated into the CPU, as is L3 and if it exists L4. For instance a brand new Intel CPU will have dedicated L1 and L2 per CPU core, and then a shared L3 across cores (and for some CPUs, also an L4 shared between all the cores as well as the onboard GPU).
 
 **Static randon access memory (SRAM)** is used for caches. SRAM uses multiple transistors for each memory cell. It has an external gate array known as a **bistable multivibrator** that switches between two states. This means that it does not have to be continually refreshed like DRAM. Each cell will maintain its data as long as it has power. Without the need for constant refreshing, SRAM can operate more quickly.
 
