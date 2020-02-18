@@ -1,4 +1,4 @@
-# Session 1: The Fetch-Decode-Execute Cycle
+# Session 1 Pre-Work: The Fetch-Decode-Execute Cycle
 
 Prior to class, please do two things:
 
