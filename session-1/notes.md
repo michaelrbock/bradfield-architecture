@@ -10,7 +10,7 @@ Examples:
     * Underflow errors in floats = getting too close to 0 (e.g. when you divide by 2 too many times), it's too small.
     * You can do this with positive or negative numbers. This is how you get `-0`.
 * Exceeding the call stack (stack overflow). Running out of space that stores the state of your function. Use stack for: function calls, closures, recursion.
-    * To "pop" the stack, just increment the *stack pointer* to poin to the next frame (don't zero-out the frame itself).
+    * To "pop" the stack, just increment the *stack pointer* to point to the next frame (don't zero-out the frame itself).
     * The OS smartly doesn't zero-out data until its needed next.
 
 The ALU operates on *input* registers and outputs to registers as well.
