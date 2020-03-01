@@ -1,0 +1,14 @@
+	addiu	$t0	$zero	0 # i
+	addiu	$t1	$zero	11 # n
+	addiu	$t2	$zero	0 # total
+
+for_loop:
+	beq	$t0	$t1	end
+	add	$t2	$t2	$t0
+	addi	$t0	$t0	1
+	j	for_loop
+
+end:
+	add	$a0	$t2	$zero # load desired value into argument register $a0, using pseudo-op
+	li	$v0	1 # service 1 is print integer
+	syscall

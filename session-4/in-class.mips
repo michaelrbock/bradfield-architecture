@@ -1,0 +1,6 @@
+	addiu	$t0	$zero	0
+loop:
+	beq	$t0	5	end
+	addi	$t0	$t0	1
+	j	loop
+end:

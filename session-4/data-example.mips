@@ -1,0 +1,14 @@
+
+.data
+
+foo_string: .asciiz "foo"
+
+.text
+
+la	$t0	foo_string
+lb	$t1	($t0)
+lb	$t2	1($t0)
+lb	$t3	2($t0)
+
+li	$t4	'b'
+sb	$t4	foo_string

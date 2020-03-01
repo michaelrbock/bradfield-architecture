@@ -1,0 +1,5 @@
+li	$t1	10 # n = 10
+loop:
+add	$v0	$v0	$t1 # total += n
+subi	$t1	$t1	1
+bne	$t1	$zero	loop # branch to loop, unless n is zero
