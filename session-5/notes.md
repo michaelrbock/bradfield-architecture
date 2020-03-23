@@ -9,4 +9,3 @@ How to remember gate symbols for AND: it's like the `D` of AND and the `O` of OR
 Single bit half adder: XOR for Sum, AND for Carry Out.
 
 In modern systems, we don't use ripple adders because we don't want to wait for the propogation. Instead, we use Carry-lookahead adders.
-

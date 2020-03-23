@@ -19,4 +19,3 @@ How to actually detect the rising/falling edge of the clock signal?
 TODO: diagram of detection circuit. There's a little bit of propogation delay in the NOT gate, so very briefly, we get a 1 on the output.
 
 The clock tick is sent into any *stable* component (register).
-

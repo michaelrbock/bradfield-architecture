@@ -2,7 +2,7 @@
 
 In some languages, like C, you can write inline C.
 
-Nowadays, the most common reason to understand assembly to be able to read dissambly of a binary to understand what it's doing. Very few people write assembly, because compilers are really good.
+Nowadays, the most common reason to understand assembly to be able to read a dissambly of a binary to understand what it's doing. Very few people write assembly, because compilers are really good.
 
 There are some narrow cases, like certain  parts of the kernel that need to be written in Assembly.
 

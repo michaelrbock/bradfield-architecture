@@ -176,8 +176,6 @@ Decode 32-bit float: `01000010001010100000000000000000`
 
 ## Encoding MIPS instructions
 
-
-
 * `add     $a2 $a0 $a1  // compute $a0 + $a1 and store in $a2`
     * `R` code instruction: opcode (6 bits), rs (5), rt (5), rd (5), shamt (5), funct (6)
     * opcode: `000000`
